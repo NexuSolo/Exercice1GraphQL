@@ -16,7 +16,7 @@ export class RickEtMortyDetailComponent implements OnInit{
   ngOnInit(): void {
     this.listeName = this.rm.getCharacterByName(1);
     this.listeName.valueChanges.subscribe(({data, error} : any) => {
-      console.log(data.characters.results);
+      console.log(data.character);
       // console.log(error);
     });
   }

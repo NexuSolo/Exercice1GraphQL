@@ -33,33 +33,28 @@ export class RickEtMortyService {
 		return this.apollo.watchQuery({
 			query: 
 			gql`{
-				characters(filter: {name: "${id}"}) {
-					results {
-						id,
-						name,
-						image,
-						status,
-						type,
-						gender,
-						origin {
-							name,
-							url
-						},
-						location {
-							name,
-							url
-						},
-						episode {
-							name,
-							episode,
-							air_date,
-							created
-						},
-						url,
-						created
+				character(id:"${id}") {
+					id
+					name
+					image
+					status
+					type
+					gender
+					origin {
+					  name
 					}
-				}
-			}`,
+					location {
+					  name
+					}
+					episode {
+					  name
+					  episode
+					  air_date
+					  created
+					}
+					created
+				  }
+			  }`,
 			fetchPolicy: 'network-only',
 			errorPolicy: 'all',
 			context: {
