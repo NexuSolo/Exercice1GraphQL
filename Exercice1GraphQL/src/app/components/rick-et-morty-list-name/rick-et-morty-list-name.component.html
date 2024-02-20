@@ -6,10 +6,10 @@
     
     
     <div class="liste">
-        @for (character of listeName; track character.name) {
-            <a class="box-character" routerLink="character/{{character.id}}">
-                {{ character.name }}
-                <img class ="img-character" src="{{ character.image }}" alt="">
+        @for (character of listeName; track character) {
+            <a class="box-character" routerLink="character/{{character.results?.id}}">
+                {{ character.results?.name }}
+                <img class ="img-character" src="{{ character.results?.image }}" alt="">
 
             </a>
         
