@@ -1,0 +1,51 @@
+<div class="div-body">
+
+    <div class="title">
+        <h1>{{character.name}}</h1>
+
+        <img class="img-perso" src={{character.image}} alt="">
+    </div>
+
+    <div class="infos">
+        <div>
+            <h2>Status</h2>
+            <p>{{character.status}}</p>
+        </div>
+        <div>
+            <h2>Species</h2>
+            <p>{{character.species}}</p>
+        </div>
+        <div>
+            <h2>Type</h2>
+            <p>{{character.type}}</p>
+        </div>
+        <div>
+            <h2>Gender</h2>
+            {{character.gender}}
+        </div>
+        <div>
+            <h2>Origin</h2>
+            <a href="{{character.origin.url}}">{{character.origin.name}}</a>
+        </div>
+        <div>
+            <h2>Location</h2>
+            <a href="{{character.location.url}}">{{character.location.name}}</a>
+        </div>
+        <div>
+            <h2>Url</h2>
+            <a href="{{character.url}}">Lien</a>
+        </div>
+        <div>
+            <h2>Created</h2>
+            <p>{{character.created}}</p>
+        </div>
+
+    </div>
+    
+
+
+
+</div>
+
+
+

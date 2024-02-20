@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RickEtMortyService } from '../../service/rick-et-morty.service';
 import { Observable } from 'rxjs';
 import { Query, QueryRef } from 'apollo-angular';
+import { RouterLink } from '@angular/router';
 
 export interface Characters {
 	results?: {
@@ -13,7 +14,9 @@ export interface Characters {
 @Component({
   selector: 'app-rick-et-morty-list-name',
   standalone: true,
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './rick-et-morty-list-name.component.html',
   styleUrl: './rick-et-morty-list-name.component.css'
 })

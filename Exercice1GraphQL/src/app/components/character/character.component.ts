@@ -12,18 +12,19 @@ import { ActivatedRoute } from '@angular/router';
 })
 
 export class RickEtMortyDetailComponent implements OnInit{
-  character : any;
+  character !: any;
 
   constructor(private rm : RickEtMortyService, private route : ActivatedRoute) {}
-  listName !: any
+
 
   ngOnInit(): void {
-    this.listName = this.rm.getCharacterByName(1);
-    this.listName.valueChanges.subscribe(({data, error} : any) => {
+    const id : number =  this.route.snapshot.paramMap.get('id') as unknown as number;
+    this.character = this.rm.getCharacterByName(id);
+    this.character.valueChanges.subscribe(({data, error} : any) => {
       console.log(data.character);
+      this.character = data.character;
       // console.log(error);
     });
-    const id = this.route.snapshot.paramMap.get('id');
     //appel back
   }
 

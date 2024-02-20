@@ -1,4 +1,4 @@
-<body>
+<div class="div-body">
     
     <div class="title">
         <h1>Rick et Morty</h1>
@@ -7,7 +7,7 @@
     
     <div class="liste">
         @for (character of listeName; track character.name) {
-            <a class="box-character">
+            <a class="box-character" routerLink="character/{{character.id}}">
                 {{ character.name }}
                 <img class ="img-character" src="{{ character.image }}" alt="">
 
@@ -20,7 +20,7 @@
           }
     </div>
 
-</body>
+</div>
 
 
 
