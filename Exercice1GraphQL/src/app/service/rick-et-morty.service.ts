@@ -15,7 +15,8 @@ export class RickEtMortyService {
 			gql`{
 				characters {
 					results{
-						name
+						name,
+						image
 					}
 				}
 			}`,
