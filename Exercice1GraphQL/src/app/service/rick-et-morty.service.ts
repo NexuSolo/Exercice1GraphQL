@@ -9,11 +9,11 @@ export class RickEtMortyService {
 	constructor(private apollo: Apollo) {
 	}
 
-	getCharacter() {
+	getCharacter(page: number) {
 		return this.apollo.watchQuery({
 			query: 
 			gql`{
-				characters {
+				characters(page: ${page}) {
 					results{
 						id,
 						name,

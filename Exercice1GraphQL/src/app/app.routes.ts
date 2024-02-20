@@ -3,6 +3,6 @@ import { RickEtMortyListNameComponent } from './components/rick-et-morty-list-na
 import { RickEtMortyDetailComponent } from './components/character/character.component';
 
 export const routes: Routes = [
-    { path: '', component: RickEtMortyListNameComponent},
+    { path: ':page', component: RickEtMortyListNameComponent},
     { path: 'character/:id', component: RickEtMortyDetailComponent}
 ];

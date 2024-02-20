@@ -7,7 +7,7 @@
     
     <div class="liste">
         @for (character of listeName; track character) {
-            <a class="box-character" routerLink="character/{{character.id}}">
+            <a class="box-character" routerLink="../character/{{character.id}}">
                 {{ character.name }}
                 <img class ="img-character" src="{{ character.image }}" alt="">
 
@@ -21,7 +21,7 @@
     </div>
 
     <div>
-        <button>Previous</button>
+        <button routerLink="">Previous</button>
         <button>Next</button>
     </div>
 

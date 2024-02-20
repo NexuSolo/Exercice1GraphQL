@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RickEtMortyService } from '../../service/rick-et-morty.service';
 import { Observable } from 'rxjs';
 import { Query, QueryRef } from 'apollo-angular';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
 export interface Characters {
 	  id: string
@@ -21,9 +21,10 @@ export interface Characters {
 
 export class RickEtMortyListNameComponent implements OnInit{
   listeName : Characters[] = [];
-
+  page : number = 1;
   ngOnInit(): void {
-    this.rm.getCharacter().valueChanges.subscribe(({data}:any) => {
+    this.page =  this.route.snapshot.paramMap.get('page') as unknown as number || 1;
+    this.rm.getCharacter(this.page).valueChanges.subscribe(({data}:any) => {
       console.log(data.characters.results);
       this.listeName = data.characters.results as Characters[];
       for(const character of this.listeName){
@@ -32,7 +33,7 @@ export class RickEtMortyListNameComponent implements OnInit{
     });
   }
 
-  constructor(private rm : RickEtMortyService) {
+  constructor(private rm : RickEtMortyService, private route : ActivatedRoute) {
 
   }
 
