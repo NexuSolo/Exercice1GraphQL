@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
-import { ApolloClient } from '@apollo/client';
 import { Apollo, gql } from 'apollo-angular';
 
 @Injectable({
-	providedIn: 'root'
+	providedIn: 'root',
 })
 export class RickEtMortyService {
-
-
 
 	constructor(private apollo: Apollo) {
 	}
