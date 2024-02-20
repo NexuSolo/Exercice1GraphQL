@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QueryRef } from 'apollo-angular';
 import { RickEtMortyService } from '../../service/rick-et-morty.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-character',
@@ -11,15 +12,13 @@ import { RickEtMortyService } from '../../service/rick-et-morty.service';
 })
 
 export class RickEtMortyDetailComponent implements OnInit{
-  listeName !: QueryRef<unknown>;
+  character : any;
+
+  constructor(private rm : RickEtMortyService, private route : ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.listeName = this.rm.getCharacterByName(1);
-    this.listeName.valueChanges.subscribe(({data, error} : any) => {
-      console.log(data.characters.results);
-      // console.log(error);
-    });
+    const id = this.route.snapshot.paramMap.get('id');
+    //appel back
   }
 
-  constructor(private rm : RickEtMortyService) {}
 }

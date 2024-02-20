@@ -1,1 +1,27 @@
-<p>rick-et-morty-list-name works!</p>
+<body>
+    
+    <div class="title">
+        <h1>Rick et Morty</h1>
+    </div>
+    
+    
+    <div class="liste">
+        @for (character of listeName; track character.name) {
+            <div class="box-character">
+                {{ character.name }}
+                <img class ="img-character" src="{{ character.image }}" alt="">
+
+            </div>
+        
+        
+        
+          } @empty {
+            <li> Il n'y a pas de personnages </li>
+          }
+    </div>
+
+</body>
+
+
+
+
