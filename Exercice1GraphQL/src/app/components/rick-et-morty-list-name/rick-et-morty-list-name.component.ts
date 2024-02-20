@@ -11,13 +11,13 @@ import { Query, QueryRef } from 'apollo-angular';
   styleUrl: './rick-et-morty-list-name.component.css'
 })
 export class RickEtMortyListNameComponent implements OnInit{
-  listeName !: QueryRef<unknown>;
+  listeName : any;
 
   ngOnInit(): void {
     this.listeName = this.rm.getCharacter();
     this.listeName.valueChanges.subscribe(({data, error} : any) => {
       console.log(data.characters.results);
-      // console.log(error);
+      this.listeName = data.characters.results;
     });
   }
 
