@@ -54,3 +54,19 @@ a{
     border-radius: 50%;
     margin: 10px;
 }
+
+button{
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #94d6dc;
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+    font-size: 15px;
+    color: black;
+}
+
+button:hover{
+    background-color: #6eb7bd;
+}
