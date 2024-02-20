@@ -5,11 +5,9 @@ import { Query, QueryRef } from 'apollo-angular';
 import { RouterLink } from '@angular/router';
 
 export interface Characters {
-	results?: {
 	  id: string
 	  name: string
 	  image: string
-	} 
 }
 @Component({
   selector: 'app-rick-et-morty-list-name',
@@ -28,6 +26,9 @@ export class RickEtMortyListNameComponent implements OnInit{
     this.rm.getCharacter().valueChanges.subscribe(({data}:any) => {
       console.log(data.characters.results);
       this.listeName = data.characters.results as Characters[];
+      for(const character of this.listeName){
+        console.log(character);
+      }
     });
   }
 

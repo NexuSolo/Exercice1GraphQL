@@ -39,6 +39,7 @@ export class RickEtMortyService {
 					image
 					status
 					type
+					species
 					gender
 					origin {
 					  name

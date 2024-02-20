@@ -19,10 +19,9 @@ export class RickEtMortyDetailComponent implements OnInit{
 
   ngOnInit(): void {
     const id : number =  this.route.snapshot.paramMap.get('id') as unknown as number;
-    this.character = this.rm.getCharacterByName(id);
-    this.character.valueChanges.subscribe(({data, error} : any) => {
-      console.log(data.character);
+    this.rm.getCharacterByName(id).valueChanges.subscribe(({data, error} : any) => {
       this.character = data.character;
+      console.log(data.character);
       // console.log(error);
     });
     //appel back
