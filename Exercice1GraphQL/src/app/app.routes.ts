@@ -4,5 +4,5 @@ import { RickEtMortyDetailComponent } from './components/character/character.com
 
 export const routes: Routes = [
     { path: '', component: RickEtMortyListNameComponent},
-    { path: '/:id', component: RickEtMortyDetailComponent}
+    { path: 'character/:id', component: RickEtMortyDetailComponent}
 ];
