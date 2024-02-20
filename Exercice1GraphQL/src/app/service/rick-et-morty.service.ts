@@ -15,8 +15,48 @@ export class RickEtMortyService {
 			gql`{
 				characters {
 					results{
+						id,
 						name,
 						image
+					}
+				}
+			}`,
+			fetchPolicy: 'network-only',
+			errorPolicy: 'all',
+			context: {
+				uri: 'https://rickandmortyapi.com/graphql'
+			}
+		});
+	}
+
+	getCharacterByName(id: number) {
+		return this.apollo.watchQuery({
+			query: 
+			gql`{
+				characters(filter: {name: "${id}"}) {
+					results {
+						id,
+						name,
+						image,
+						status,
+						type,
+						gender,
+						origin {
+							name,
+							url
+						},
+						location {
+							name,
+							url
+						},
+						episode {
+							name,
+							episode,
+							air_date,
+							created
+						},
+						url,
+						created
 					}
 				}
 			}`,
